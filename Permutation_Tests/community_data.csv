@@ -1,0 +1,10 @@
+Trait.Group,Species,Site1,Site2,Site3,Site4,Site5,Site6
+Herbivore,SpA,0,1,0,0,1,0
+Herbivore,SpB,0,1,0,1,1,0
+Herbivore,SpC,1,0,1,0,1,1
+Herbivore,SpD,1,0,0,0,1,1
+Invertivore,SpE,1,1,0,0,0,1
+Invertivore,SpF,1,1,0,0,0,1
+Invertivore,SpG,1,1,0,0,0,0
+Invertivore,SpH,1,1,1,0,0,0
+Invertivore,SpI,1,1,1,0,0,0
