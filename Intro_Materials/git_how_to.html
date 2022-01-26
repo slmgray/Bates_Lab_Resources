@@ -242,7 +242,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">How to use GitHub</h1>
 <h4 class="author"><a href="https://www.dominiquemaucieri.com">Dominique Maucieri</a></h4>
-<h4 class="date">21 January, 2022</h4>
+<h4 class="date">24 January, 2022</h4>
 
 </div>
 
@@ -254,9 +254,103 @@ div.tocify {
 <p><a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">Git</a> is a version control software that uses local files allowing ease of merging and branching.</p>
 <p><a href="www.github.com">Github</a> is an interface that very user-friendly, helps with use of git software and collaboration with others. This makes it a popular choice for open source projects.</p>
 </div>
+<div id="prep" class="section level2">
+<h2>Prep</h2>
+<p>To prep for using Git and GitHub, follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Update your R / R Studio, if you haven’t recently. Do yourself this favour because there have been some large changes to R recently. This tutorial was created with the “Bird Hippie” release version 4.1.2 so if you are at least newer than 4.0.0 you will probably be fine but if your version starts with a 3, its time to update. You can update R <a href="https://cran.r-project.org/">here</a> and R Studio (just do the desktop open source edition) <a href="https://www.rstudio.com/products/rstudio/download/#download">here</a>. Both require you to redownload the program to update them</p></li>
+<li><p>Get an account on GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>)</p></li>
+<li><p>Locate this tutorial on <a href="https://github.com/DominiqueMaucieri">my GitHub page</a>, this is where this repository is being stored and how you will access it</p></li>
+<li><p>Then we heed to set up Git. See <a href="https://docs.github.com/en/get-started/quickstart/set-up-git">here</a> for more information. We will also need git on our computers, so download git <a href="https://git-scm.com/downloads">here</a>. When prompted enter the username and email address you used for creating your GitHub account. You will need to locate your terminal on your computer to do this. For Macs, just search for terminal on your computer and open that application. For Windows, see the note in this <a href="https://docs.github.com/en/get-started/quickstart/set-up-git">link</a></p></li>
+<li><p>If you found that using this terminal a bit terrifying, it doesn’t fit well with your style of workflow or you don’t want to feel like a computer hacker, try downloading another program to help out with this like the <a href="https://desktop.github.com/">GitHub Desktop</a>, a code editor like <a href="https://code.visualstudio.com/">Visual Studio Code</a> or even a great text editor like <a href="https://atom.io/">Atom</a>. I have used all of these and will give some insight as we go. If you have the time, try them all out and figure out what works for you. You don’t need to download any of this though, I usually only work in the terminal, but there are many options so you get the most out of your time.</p></li>
+</ol>
+<p>With this prep, you should be able to start cloning repositories, though you will need to authenticate with GitHub if you want to be able to change any repositories.</p>
+<div id="tokens" class="section level3">
+<h3>Tokens</h3>
+<p>New updates in GitHub, to improve security involve using tokens to authenticate your account on different devices. These Tokens should be regenerated every so often to make sure they are secure, and every time you want to use your token to log into something, you have to regenerate it. To do this, follow <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">this</a> and essentially you will use this token as your password for logging into the terminal.</p>
 </div>
-<div id="the-basics" class="section level1">
-<h1>The Basics</h1>
+</div>
+<div id="what-you-can-do-with-github" class="section level2">
+<h2>What you can do with GitHub</h2>
+<div id="cloning-a-repo" class="section level3">
+<h3>Cloning a repo</h3>
+<p>Since GitHub allows you to share code and data online, it means that you will have access to many different resources now. If you wanted to be able to take some of the code or data you see online, such as this script, and put it onto your own computer to look at and maybe play with, this is known as cloning a repository.</p>
+<p>This is very easy to do.</p>
+<ol style="list-style-type: decimal">
+<li><p>Locate the repository you want to clone, such as <a href="https://github.com/DominiqueMaucieri/Bates_Lab_Resources">this one</a></p></li>
+<li><p>locate and click the large, green icon on the top right side, that reads “code”</p></li>
+<li><p>follow the rest based on which program you want to use</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>GitHub Desktop just click the “Open with GitHub Desktop” button directly. When it brings you to the application, select where you want to put this file on your computer and clone. Now celebrate, you have this repository on your computer now!</p></li>
+<li><p>Visual Studio Code just copy the url and then open the VSC application. On the left side, click extensions and then install the “GitHub Pull Requests and Issues” extension. Click the GitHub symbol and sign in. Then click the weird y like symbol (third from the top) on the left side when downloaded, and clone a repository (may need to click the three little dots at the top by source control to find clone). Paste the url when prompted, hit enter, then select where you want to save those folders. Now celebrate, you have this repository on your computer now!</p></li>
+<li><p>Atom just copy the url and then open the application. Open the command palette (shift + command + p on a Mac), search for github: clone, and then paste the url in the “clone from” spot and select where on your computer with the “to directory spot”. Click clone and celebrate, you have this repository on your computer now!</p></li>
+<li><p>Terminal command line just copy the url and then open the terminal. First locate where on your computer you are. Using <code>cd foldername/foldername</code> etc locate where you want to put your new folder. When in that location with your terminal, enter <code>git clone &#39;url&#39;</code></p></li>
+</ol>
+<p>With this repo now on your computer, you can open all the file, work on scripts, use the data etc.</p>
+</div>
+<div id="pulling-a-repo" class="section level3">
+<h3>Pulling a repo</h3>
+<p>Sometimes the repositories we have on our computers are updated by the creators, coauthors, or any other contributor, so before you were to send your changes to GitHub its best practice to figure out if there are changes that have been made that you don’t have on your computer first. Additionally, if you were just looking at a repo and came back to it after a while, you might want to see if there have been any updates on it.</p>
+<p>To do this, we must “pull” a new update on your repository. This command should be used at a minimum, <strong>EVERY</strong> time you interact with a repository.</p>
+<p>How to pull:</p>
+<ol style="list-style-type: lower-alpha">
+<li>GitHub Desktop</li>
+</ol>
+<ul>
+<li>Once in the repository you are working in, click fetch at the top</li>
+<li>Then if there are updates they will be listed below</li>
+<li>Click “pull origin”</li>
+<li>Done, you now have the updated changes on your computer</li>
+</ul>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Visual Studio Code</li>
+</ol>
+<ul>
+<li>Once in the repository you are working in, go to the source control (the weird y like symbol (third from the top) on the left side)</li>
+<li>Click the three small dots and then click pull</li>
+<li>Done, you now have the updated changes on your computer</li>
+</ul>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Atom</li>
+</ol>
+<ul>
+<li>Once in the repository you are working in, make sure you have logged into GitHub</li>
+<li>Click fetch at the bottom or open the command palette (shift + command + p on a Mac), search for github: pull</li>
+<li>Done, you now have the updated changes on your computer</li>
+<li>Note: this should be the steps, it doesn’t actually work on my computer, due to issue <a href="https://github.com/atom/github/issues/2720#issuecomment-930277356">#2720</a> so I pull in the terminal command line</li>
+</ul>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Terminal</li>
+</ol>
+<ul>
+<li>Make sure you are in the location of the repo folder</li>
+<li>Then type <code>git pull</code> and hit enter</li>
+<li>Done, you now have the updated changes on your computer</li>
+</ul>
+</div>
+<div id="creating-a-repo" class="section level3">
+<h3>Creating a repo</h3>
+<p>To create your own repo, the easiest is to start it on the GitHub browser. Go to your profile, then your repositories, and then click the large green “New”</p>
+<p>From there you should name your repository something useful, and add a description. Even if its just “MSc thesis” at least thats something.</p>
+<p>Private repositories are nice if you have lots of unplublished data and you don’t want the stress of people looking at your half completed analyses. Don’t worry though, you can still add collaborators to private repositories so you can share it, it just means that it won’t be found by everyone.</p>
+<p>Public repositories are great for completed manuscript analyses and making sure your data and code are open source. You can also archive your data with something like Zenodo (<a href="https://zenodo.org/" class="uri">https://zenodo.org/</a>)</p>
+<p>You should ALWAYS initialize your repository with a README file, but a .gitignore and license can be added after so I don’t usually initialize with them.</p>
+<p>Then just create the repository. Now with this repository created, you can clone it to your computer and start working in it. If you created files before hand, just move them into the folder for this repository that you have cloned onto your computer, and then go to the commit section to see what you do next.</p>
+</div>
+<div id="commiting-a-repo" class="section level3">
+<h3>Commiting a repo</h3>
+</div>
+<div id="pushing-a-repo" class="section level3">
+<h3>Pushing a repo</h3>
+</div>
+<div id="branches-and-basic-workflow" class="section level3">
+<h3>Branches and basic workflow</h3>
+</div>
+</div>
+</div>
+<div id="some-other-tools" class="section level1">
+<h1>Some other tools</h1>
 <div id="working-with-.rmd-files" class="section level2">
 <h2>Working with .Rmd files</h2>
 <p>Markdown files allow for you to create neat outputs of your code and comments.</p>
@@ -270,8 +364,8 @@ div.tocify {
 </ul></li>
 <li><p>Once you have your .Rmd file created, edit the top information so it is informative and will set up your R Markdown file, with your name and title:</p></li>
 </ul>
-<p>For an .html knit output: title: “First R Markdown file” author: “Dominique Maucieri” date: “21 January, 2022” output: html_document: toc: yes toc_depth: 3 toc_float: yes</p>
-<p>For a .pdf knit output: title: “First R Markdown file” author: ‘Dominique Maucieri’ date: “21 January, 2022” output: pdf_document: toc: yes toc_depth: 3</p>
+<p>For an .html knit output: title: “First R Markdown file” author: “Dominique Maucieri” date: “24 January, 2022” output: html_document: toc: yes toc_depth: 3 toc_float: yes</p>
+<p>For a .pdf knit output: title: “First R Markdown file” author: ‘Dominique Maucieri’ date: “24 January, 2022” output: pdf_document: toc: yes toc_depth: 3</p>
 <ul>
 <li><p>This information will create the title for your outputs and allow you to format the table of contents of your final knit output. The date argument will automatically save the date at the time of knit. Knitting will take your R Markdown file and turn it in to a more polished final document that can be sent to collaborators to illustrate and compile your findings.</p></li>
 <li><p>You can choose to knit your R Markdown into an .html or a .pdf file, I will be using both so you can compare the difference. In order to have a .pdf output you will need to have a tex editor on your computer. <a href="https://ciser.cornell.edu/rmarkdown-knit-to-html-word-pdf/" class="uri">https://ciser.cornell.edu/rmarkdown-knit-to-html-word-pdf/</a> may help if you want to make a .pdf output. No additional programs are needed for a .html output.</p></li>
@@ -408,9 +502,15 @@ Animals</code></pre>
 <div id="working-with-r-projects" class="section level3">
 <h3>Working with R Projects</h3>
 <ul>
+<li>R Projects run isolated code so the code in one Project does not affect other Projects even if open and running code at the same time</li>
 <li>Checkout the simplified_filepaths.R file and then the simplified_filepaths.Rmd file for why these R Projects are so useful and should be considered when working with R Markdown files</li>
 </ul>
 </div>
+</div>
+<div id="readmes" class="section level2">
+<h2>READMEs</h2>
+<p>These files are markdown files, and can be edited in text editors, or for Mac’s I like <a href="https://macdown.uranusjr.com/">MacDown</a> for visualizing my code and as I write it.</p>
+<p>These files should have all necessary information in them for anyone looking at your repository. They act as a “README” before you look at all the files so you know whats going on. Don’t forget about updating these as you update your code. There are also many great online sources of markup syntax like <a href="https://www.markdownguide.org/cheat-sheet/">this cheatsheet</a>. This syntax also works in the markdown parts of an .Rmd file, like what you are reading right now.</p>
 </div>
 </div>
 
