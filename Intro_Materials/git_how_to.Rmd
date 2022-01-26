@@ -3,13 +3,13 @@ title: "How to use GitHub"
 author: '[Dominique Maucieri](https://www.dominiquemaucieri.com)'
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
-  pdf_document:
-    toc: yes
-    toc_depth: 3
   html_document:
     toc: yes
     toc_depth: 3
     toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: 3
 ---
 
 # Getting started with Git
